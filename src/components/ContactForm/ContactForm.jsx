@@ -3,10 +3,11 @@ import * as Yup from "yup";
 import { nanoid } from "nanoid";
 import css from "./ContactForm.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { addContact, selectContacts } from "../../redux/contactsSlice";
+import { addContact } from "../../redux/contactsOps";
+import { selectFilteredContacts } from "../../redux/contactsSlice";
 
 const ContactForm = () => {
-  const contacts = useSelector(selectContacts);
+  const contacts = useSelector(selectFilteredContacts);
   const dispatch = useDispatch();
   const INITIAL_FORM_DATA = {
     name: "",
